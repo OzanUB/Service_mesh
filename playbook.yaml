@@ -1,0 +1,80 @@
+- name: "Login to Openshift and get the creds on the system"
+  shell: oc login --token=sha256~RcOqShR0n6x4zAsOfv8fDuDT6XzKYt21tT8xyrWSzpU --server=https://api.ocp4.fhlb-of.com:6443
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc create -f eo-namespace.yaml 
+
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc create -f olo-namespace.yaml
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc create -f eo-og.yaml
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc create -f eo-sub.yaml
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc get csv --all-namespaces | grep elastic
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc create -f olo-og.yaml
+
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc create -f olo-sub.yaml
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc get csv -n openshift-logging
+
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc create -f olo-instance.yaml
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc get pods -n openshift-logging
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc get deployment
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc get pods -n openshift-logging
+
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc create -f jaeger.yaml 
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc new-project jaeger-system
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc create -n jaeger-system -f jaeger.yaml 
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc get pods -n jaeger-system -w 
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc get pods -n jaeger-system
+
+- name: "Create Elastic seahrch operator namesoace"
+  shell: oc get pods -n istio-system -w
+
+
+- name: "Check if istio project is already creted"
+  shell: oc projects
+
+- name: "Create a new istio system" #create when there is no new istio project
+  shell: oc new-project istio-system
+
+- name: "Install istion in the specified namespace"
+  shell: oc create -n istio-system -f istio-installation.yaml
+
+
+- name: "Run a shell command on a remote host"
+  shell: oc get smcp -n istio-system
+
+- name: "Run a shell command on a remote host"
+  shell: oc get pods -n istio-system -w
+
+
+  
