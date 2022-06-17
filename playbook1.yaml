@@ -1,0 +1,11 @@
+---
+
+hosts: localhost
+connection: local
+gather_facts: false
+roles:
+  - elastic-search
+  - istio
+  - jaeger
+  - prometheus
+  - grafana
