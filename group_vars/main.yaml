@@ -1,0 +1,5 @@
+---
+#developer variables
+
+required_operator: "servicemeshoperator"
+desired_namespace_for_installation: "istio-system"
